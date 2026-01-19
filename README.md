@@ -2,7 +2,9 @@
 
 Repo: https://github.com/iceyisaak/langchain-chatbot-pdf-interview
 
-StreamlitUI: 
+StreamlitUI: https://langchain-chatbot-pdf-interview.streamlit.app/
+
+---
 
 A conversational RAG (Retrieval-Augmented Generation) application built with **Streamlit**, **LangChain**, and **Groq**. This tool allows users to upload multiple PDF documents and engage in a context-aware dialogue with an AI assistant that answers questions based on the uploaded content.
 
@@ -43,8 +45,8 @@ Before running the application, ensure you have:
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-username/pdf-rag-chatbot.git
-cd pdf-rag-chatbot
+git clone https://github.com/iceyisaak/langchain-chatbot-pdf-interview.git
+cd langchain-chatbot-pdf-interview
 
 ```
 
