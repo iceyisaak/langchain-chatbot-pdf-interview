@@ -51,6 +51,10 @@ if groq_api_key and hf_token:
 
             documents=[]
             for uploaded_file in uploaded_files:
+
+                if not os.path.exists("./document"):
+                    os.makedirs("./document")
+
                 temp_pdf=f"./document/temp.pdf"
                 with open(temp_pdf,"wb") as file:
                     file.write(uploaded_file.getvalue())
