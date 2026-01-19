@@ -154,9 +154,9 @@ if groq_api_key and hf_token:
 
         user_input = st.chat_input("Enter your question:")
 
+
+
         if user_input:
-
-
             session_history=get_session_history(st.session_state.session_id)
             st.session_state.messages.append({
                     "role":"user",
@@ -166,14 +166,15 @@ if groq_api_key and hf_token:
 
 
             with st.chat_message("assistant"):
-                
-                streamlit_callback=StreamlitCallbackHandler(st.container(),expand_new_thoughts=False)
-                response=conversational_rag_chain.invoke(
-                    {"input":user_input},
-                    config={
-                        "configurable":{"session_id":st.session_state.session_id}
-                    }
-                )
+                with st.spinner("Analyzing documents and generating response..."):
+                    streamlit_callback=StreamlitCallbackHandler(st.container(),expand_new_thoughts=False)
+                    response=conversational_rag_chain.invoke(
+                        {"input":user_input},
+                        config={
+                            "configurable":{"session_id":st.session_state.session_id}
+                        }
+                    )
+
                 st.write(response['answer'])
                 st.session_state.messages.append({
                     "role":"assistant",
